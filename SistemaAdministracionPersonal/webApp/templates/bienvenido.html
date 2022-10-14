@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenidos a la página de Administración</title>
+</head>
+<body>
+    <h1>SISTEMA DE ADMINISTRACIÓN S.E.M.P-G02</h1>
+
+    <div>
+        LA CANTIDAD DE REGISTROS CONTENIDOS EN LA B.D: {{no_PersonasBd}}
+    </div>
+
+    <div>
+        <a href="nueva_persona">Nueva Persona</a>
+    </div>
+
+    <div>
+        <ul>
+            {% for p in personas %}
+                <li>
+                    PERSONA: {{p.id}}
+                    {{p.nombre}}
+                    {{p.apellidoPaterno}}
+                    {{p.apellidoMaterno}}
+                    {{p.centroTrabajo}}
+                    {{p.email}}
+
+                    <a href="detalle_persona/{{p.id}}">MOSTRAR DETALLE</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
